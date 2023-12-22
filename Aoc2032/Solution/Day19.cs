@@ -165,7 +165,7 @@ namespace Aoc2023.Solution
 
         private static long getCombos(int xmin, int xmax, int mmin, int mmax, int amin, int amax, int smin, int smax, Dictionary<string, string> workflows, string step, int index, string handledSteps)
         {
-            Console.WriteLine("GetCombos: X: " + xmin + " - " + xmax + " S:" + smin + " - " + smax + " A: " + amin + " - " + amax + " M: " + mmin + " - " + mmax + " -- " + step + " -- " + handledSteps);
+            //Console.WriteLine("GetCombos: X: " + xmin + " - " + xmax + " S:" + smin + " - " + smax + " A: " + amin + " - " + amax + " M: " + mmin + " - " + mmax + " -- " + step + " -- " + handledSteps);
             long numbers = 0;
             var result = "X";
 
@@ -300,7 +300,7 @@ namespace Aoc2023.Solution
                 long newVal = val1 * val2;
                 numbers += newVal;
             }
-            Console.WriteLine("GetCombosRes: X: " + xmin + " - " + xmax + " S: " + smin + " - " + smax + " A: " + amin + " - " + amax + " M: " + mmin + " - " + mmax + " - " + numbers + " -- " + handledSteps);
+            //Console.WriteLine("GetCombosRes: X: " + xmin + " - " + xmax + " S: " + smin + " - " + smax + " A: " + amin + " - " + amax + " M: " + mmin + " - " + mmax + " - " + numbers + " -- " + handledSteps);
             return numbers;
         }        
     }

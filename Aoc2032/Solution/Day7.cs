@@ -8,7 +8,7 @@ namespace Aoc2023.Solution
 {
     internal class Day7
     {
-        public static void solve2()
+        public static void solve1()
         {
             var total = 1;
             using (var sr = new StreamReader("../../../Input/day7.txt"))
@@ -20,10 +20,10 @@ namespace Aoc2023.Solution
                 }
             }
 
-            Console.WriteLine("Day7-2: " + total);
+            Console.WriteLine("Day7-1: " + total);
         }
 
-        public static void solve1()
+        public static void solve2()
         {
             var total = 0;
             var plays = new List<Pair>();
@@ -39,19 +39,14 @@ namespace Aoc2023.Solution
                     line = sr.ReadLine();
                 }
             }
-            var sorted = plays.OrderBy(x => x.cards, new Comparer2()).ToList();
-            //Console.WriteLine("sorted");
+            var sorted = plays.OrderBy(x => x.cards, new Comparer2()).ToList();            
             for (int i = 0; i < sorted.Count; i++)
             {
-                total += sorted[i].bid * (1 + i);
-              //  Console.WriteLine("sorted: " + sorted[i].cards + " -- " + i + " -- " + sorted[i].bid + " -- " + sorted[i].bid * (1 + i) + " --  " + total);
+                total += sorted[i].bid * (1 + i);           
             }
-            /**foreach (var pair in sorted)
-            {
-                Console.WriteLine(pair.cards);
-            }**/
+           
 
-            Console.WriteLine("Day7-1: " + total);
+            Console.WriteLine("Day7-2: " + total);
         }
 
 
