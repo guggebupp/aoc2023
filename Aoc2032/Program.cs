@@ -22,5 +22,7 @@ Day18.solve1();
 Day18.solve2();
 Day19.solve1();
 Day19.solve2();
+Day21.solve1();
+Day21.solve2();
 Day22.solve1();
 Day22.solve2();

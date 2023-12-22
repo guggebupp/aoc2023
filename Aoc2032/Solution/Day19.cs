@@ -164,14 +164,12 @@ namespace Aoc2023.Solution
         }
 
         private static long getCombos(int xmin, int xmax, int mmin, int mmax, int amin, int amax, int smin, int smax, Dictionary<string, string> workflows, string step, int index, string handledSteps)
-        {
-            //Console.WriteLine("GetCombos: X: " + xmin + " - " + xmax + " S:" + smin + " - " + smax + " A: " + amin + " - " + amax + " M: " + mmin + " - " + mmax + " -- " + step + " -- " + handledSteps);
+        {            
             long numbers = 0;
             var result = "X";
 
             while (result != "A" && result != "R")
-            {
-                Console.WriteLine("GetCombos2: X: " + xmin + " - " + xmax + " S:" + smin + " - " + smax + " A: " + amin + " - " + amax + " M: " + mmin + " - " + mmax + " -- " + step + " -- " + handledSteps);
+            {                
                 var rule = workflows[step];
                 //1. Check first rule
                 if (rule.Split(",").Length <= index)
@@ -220,10 +218,8 @@ namespace Aoc2023.Solution
                                 if (ruleIndataType == 'x') { xmax = ruleValue; }
                                 else if (ruleIndataType == 'a') { amax = ruleValue; }
                                 else if (ruleIndataType == 's') { smax = ruleValue; }
-                                else if (ruleIndataType == 'm') { mmax = ruleValue; }
-                                Console.WriteLine("In>: " + handledSteps);
-                                numbers += getCombos(xmin, xmax, mmin, mmax, amin, amax, smin, smax, workflows, prevStep, prevIndex, handledSteps);
-                                Console.WriteLine("Out>: " + handledSteps);
+                                else if (ruleIndataType == 'm') { mmax = ruleValue; }                                
+                                numbers += getCombos(xmin, xmax, mmin, mmax, amin, amax, smin, smax, workflows, prevStep, prevIndex, handledSteps);                                
                             }
                             handledSteps += step + ":" + op + ",";
                             inMinValue = ruleValue + 1;
@@ -260,10 +256,8 @@ namespace Aoc2023.Solution
                                 if (ruleIndataType == 'x') { xmin = ruleValue; }
                                 else if (ruleIndataType == 'a') { amin = ruleValue; }
                                 else if (ruleIndataType == 's') { smin = ruleValue; }
-                                else if (ruleIndataType == 'm') { mmin = ruleValue; }
-                                Console.WriteLine("In<: " + handledSteps);
-                                numbers += getCombos(xmin, xmax, mmin, mmax, amin, amax, smin, smax, workflows, prevStep, prevIndex, handledSteps);
-                                Console.WriteLine("Out<: " + handledSteps);
+                                else if (ruleIndataType == 'm') { mmin = ruleValue; }                                
+                                numbers += getCombos(xmin, xmax, mmin, mmax, amin, amax, smin, smax, workflows, prevStep, prevIndex, handledSteps);                                
                             }
                             handledSteps += step + ":" + op + ",";
                             inMaxValue = ruleValue - 1;
@@ -299,8 +293,7 @@ namespace Aoc2023.Solution
                 long val2 = (sdiff == 0 ? 1 : sdiff) * (mdiff == 0 ? 1 : mdiff);
                 long newVal = val1 * val2;
                 numbers += newVal;
-            }
-            //Console.WriteLine("GetCombosRes: X: " + xmin + " - " + xmax + " S: " + smin + " - " + smax + " A: " + amin + " - " + amax + " M: " + mmin + " - " + mmax + " - " + numbers + " -- " + handledSteps);
+            }            
             return numbers;
         }        
     }
