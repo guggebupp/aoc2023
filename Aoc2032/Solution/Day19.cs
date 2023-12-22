@@ -13,7 +13,7 @@ namespace Aoc2023.Solution
         public static void solve1()
         {
             long total = 0;
-            var lines = Util.readFile(fileName)
+            var lines = Util.readFile(fileName);
             var workflows = new Dictionary<string, string>();
             var inputs = new List<string>();
             foreach (var line in lines)

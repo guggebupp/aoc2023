@@ -64,14 +64,15 @@ namespace Aoc2023.Solution
             }
             foreach (var line in lines2)
             {
-                Console.WriteLine(line);
-                foreach (var c in line)
+                //Console.WriteLine(line);
+                total += line.Count(a => a == '#');
+                /**foreach (var c in line)
                 {
                     if (c == '#')
                     {
                         total++;
                     }
-                }
+                }**/
             }
 
             //total = lines.Sum(a => a.Sum(b => b == '#'));
@@ -310,14 +311,15 @@ namespace Aoc2023.Solution
             }
             foreach (var line in lines2)
             {
-                Console.WriteLine(line);
-                foreach (var c in line)
+                //Console.WriteLine(line);
+                total += line.Count(a => a == '#');
+                /**foreach (var c in line)
                 {
                     if (c == '#')
                     {
                         total++;
                     }
-                }
+                }**/
             }
             return total;
         }

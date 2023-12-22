@@ -106,11 +106,7 @@ namespace Aoc2023.Solution
                     }
                 }
                 lines2.Add(line);
-            }
-            foreach (var line in lines2)
-            {
-                Console.WriteLine(line);
-            }
+            }            
             var foundNo = 0;
             var lines3 = new List<string>();
             //foreach (var line in lines2)
@@ -183,12 +179,7 @@ namespace Aoc2023.Solution
                     prev = line[col];
                 }
                 lines3.Add(line3);
-            }
-            Console.WriteLine();
-            foreach (var line in lines3)
-            {
-                Console.WriteLine(line);
-            }
+            }            
             total = foundNo + grids.Count - 1;
             Console.WriteLine("Day" + day + "-1: " + total);
         }
@@ -207,8 +198,7 @@ namespace Aoc2023.Solution
                 var c = line.Split(' ')[2];
                 var dir = c.Substring(c.Length - 2, 1);
                 var length = c.Substring(2, 5);
-                int num = Int32.Parse(length, System.Globalization.NumberStyles.HexNumber);
-                Console.WriteLine("DD: " + dir + " -- " + num);
+                int num = Int32.Parse(length, System.Globalization.NumberStyles.HexNumber);                
                 edge += num;
                 if (dir.Equals("0"))
                 {
