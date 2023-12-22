@@ -13,7 +13,7 @@ namespace Aoc2023.Solution
         public static void solve1()
         {
             long total = 0;
-            var lines = readFile();
+            var lines = Util.readFile(fileName);
             var bricks = new List<Brick>();
             var id = 0;
             foreach (var line in lines)
@@ -119,7 +119,7 @@ namespace Aoc2023.Solution
         public static void solve1_2()
         {
             long total = 0;
-            var lines = readFile();
+            var lines = Util.readFile(fileName);
             var bricks = new List<Brick>();
             var id = 0;
             foreach (var line in lines)
@@ -151,7 +151,7 @@ namespace Aoc2023.Solution
         public static void solve2()
         {
             long total = 0;
-            var lines = readFile();
+            var lines = Util.readFile(fileName);
             var bricks = new List<Brick>();
             var id = 0;
             foreach (var line in lines)
@@ -200,22 +200,7 @@ namespace Aoc2023.Solution
             }
             return noFall;
         }
-
-        private static List<string> readFile()
-        {
-            var lines = new List<string>();
-            using (var sr = new StreamReader("../../../Input/" + fileName))
-            {
-                var line = sr.ReadLine();
-                while (line != null)
-                {
-                    lines.Add(line);
-                    line = sr.ReadLine();
-                }
-
-            }
-            return lines;
-        }
+        
     }
 
     internal class Brick

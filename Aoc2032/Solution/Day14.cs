@@ -14,44 +14,12 @@ namespace Aoc2023.Solution
         {
             long total = 0;
             var lines = readFile();
-            var noLines = lines.Count;
-            //lines = tiltAndGo(lines);
-            //lines = rowToCol(lines);
-            //lines = rowToCol(lines);
-            //lines = rowToCol(lines);
+            var noLines = lines.Count;            
             lines = goNorth(lines);
-
-
-            //1. Tilt north            
-            /**var changed = true;
-            while (changed)
-            {
-                changed = false;
-                for (int col = 0; col < lines[0].Length; col++)
-                {
-                    for (int line = 1; line < noLines; line++)
-                    {
-                        if (lines[line][col] == 'O' && lines[line - 1][col] == '.')
-                        {
-                            StringBuilder sb = new StringBuilder(lines[line - 1]);
-                            sb[col] = 'O';
-                            lines[line - 1] = sb.ToString();
-                            sb = new StringBuilder(lines[line]);
-                            sb[col] = '.';
-                            lines[line] = sb.ToString();
-                            changed = true;
-
-                        }
-                    }
-                }
-            }**/
-            foreach (var line in lines)
-            {
-                Console.WriteLine(line);
-            }
+                        
             for (int i = 0; i < noLines; i++)
             {
-                total += lines[i].Where(a => a == 'O').Count() * (noLines - i);
+                total += lines[i].Count(a => a == 'O') * (noLines - i);
             }
 
             Console.WriteLine("Day" + day + "-1: " + total);
