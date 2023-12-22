@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Aoc2032/.vs/Aoc2032/FileContentIndex
+/Aoc2032/obj
+/Aoc2032/.vs/Aoc2032/DesignTimeBuild/.dtbcache.v2
+/Aoc2032/bin/Debug/net6.0
+/Aoc2032/.vs/Aoc2023/v17
+/.vs/aoc2023/config
+/.vs/aoc2023/DesignTimeBuild
+/.vs/aoc2023/FileContentIndex
+/.vs/aoc2023/v17
+/.vs
